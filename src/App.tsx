@@ -6,13 +6,15 @@ import * as styles from './styles'
 import { MainSection } from './MainSection';
 import { Stylesheet } from '@fluentui/merge-styles';
 import { Footer } from './Footer';
+import { Projects } from './Projects';
 
 function App() {
   return (
     <div className={styles.App}>
       <NavBar />
-      <MainSection />
-
+      <MainSection>
+        <Projects />
+      </MainSection>
       <Footer />
     </div>
   );
