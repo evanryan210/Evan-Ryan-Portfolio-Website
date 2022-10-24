@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'fieldword', sans-serif;
+
 }
 
 /* #root {
@@ -19,10 +20,10 @@
     position: relative;
     max-width: 500px;
     width: 100%;
-    background: #fff;
+    /* background: rgb(187, 198, 227); */
     margin: auto;
     padding: 10px 20px;
-    border-radius: 7px;
+    border-radius: 7px; 
 }
 
 .title-text {
@@ -43,9 +44,9 @@
 
 .skill-box .title{
     display: block;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
-    color: #333;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 .skill-box .skill-bar{
@@ -53,7 +54,7 @@
     width: 100%;
     border-radius: 6px;
     margin-top: 6px;
-    background: rgba(0,0, 0, 0.1);
+    background: rgba(0,0, 0, 0.3);
 }
 
 .skill-box .skill-per{
@@ -63,7 +64,7 @@
     width: 95%;
     border-radius: 6px;
     background: crimson;
-    animation: progress 0.4s ease-in-out forwards;
+    animation: progress 1.5s ease-in-out forwards;
     opacity: 0;
 }
 
@@ -73,11 +74,11 @@
 }
 
 .skill-per.javascript{
-    width: 60%;
+    width: 80%;
     animation-delay: 0.2s;
 }
-.skill-per.nodejs{
-    width: 40%;
+.skill-per.typescript{
+    width: 75%;
     animation-delay: 0.3s;
 }
 .skill-per.reactjs{
@@ -85,7 +86,7 @@
     animation-delay: 0.3s;
 }
 .skill-per.sqlserver{
-    width: 75%;
+    width: 60%;
     animation-delay: 0.3s;
 }
 

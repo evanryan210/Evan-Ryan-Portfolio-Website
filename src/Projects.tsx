@@ -5,7 +5,7 @@ import placeholder from './placeholder-image.png'
 
 export const Projects = () =>{
   return (
-    <div>
+    <div className={styles.mainSectionContainer}>
       {/* Web projects section */}
       <h1 id='projects' className = {styles.sectionTitle}>Web</h1>
       <div className={styles.projectList}>

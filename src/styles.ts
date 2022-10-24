@@ -7,7 +7,7 @@ import generator from './images/generator.png'
 import greenhouse from './images/greenhouse.png'
 import magnet from './images/magnet.png'
 import whale from './images/whale.png'
-
+import './fonts.css'
 const seafoam = '#87b6a7'
 const mnBlue = '#3a506b'
 
@@ -23,6 +23,7 @@ export const header = mergeStyles({
     display: 'flex',
     backgroundColor: mnBlue,
     boxShadow: '0px 1px 10px #999',
+    zIndex: '999'
 });
 
 export const navBarContainer = mergeStyles({
@@ -43,9 +44,53 @@ export const navBarButton = mergeStyles({
     ':hover' : {
         borderBottom: '5px solid #A5F1E9',
         color: '#A5F1E9',
+        cursor: 'pointer'
     } ,
     alignItems: 'center',
 })
+//Contact form pop-up
+export const popupBox = mergeStyles({
+    position: 'fixed',
+    background: '#00000050',
+    width: '100%',
+    height: '100vh',
+    top: '0',
+    left: '0',
+})
+export const box = mergeStyles({
+    position: 'relative',
+    width: '70%',
+    margin: '0 auto',
+    height: "auto",
+    maxHeight: "70vh",
+    marginTop: 'calc(100vh - 85vh - 20px)',
+    background: '#fff',
+    borderRadius: "4px",
+    padding: "20px",
+    border: '1px solid #999',
+    overflow: "auto",
+})
+export const closeIcon = mergeStyles({
+    content: 'x',
+    cursor: "pointer",
+    position: "fixed",
+    right: "calc(15% - 10px)",
+    top: "calc(100vh - 85vh - 33px)",
+    background: "#ededed",
+    width: "25px",
+    height: "25px",
+    borderRadius: "50%",
+    lineHeight: "20px",
+    textAlign: "center",
+    border: "1px solid #999",
+    fontSize: "20px",
+    color: 'black'
+})
+export const popupText = mergeStyles({
+    color: 'black'
+})
+
+
 export const mainSectionContainer = mergeStyles({
     width: '75%',
     justifyItems: 'center',
@@ -53,10 +98,12 @@ export const mainSectionContainer = mergeStyles({
     height: '100%',
     backgroundColor: mnBlue,
     boxShadow: 'rgba(0, 0, 0, 0.9) 1px 15px 15px',
+    padding: '2rem'
 })
 export const mainSectionText = mergeStyles({
     margin: '0px 10px 0px 10px'
 })
+
 export const name = mergeStyles({
     display: 'flex',
     justifyContent: 'center',
@@ -65,7 +112,8 @@ export const name = mergeStyles({
     fontWeight: 'bold',
     letterSpacing: '15px',
     marginTop: '0px',
-    paddingTop: '20px',
+    // paddingTop: '40px',
+    // paddingBottom: '40px',
     marginBottom: '0px',
     color: 'blackn',
     textAlign: 'center',
@@ -74,6 +122,7 @@ export const socialButtons = mergeStyles({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
+    margin: '16px 0px',
     'a': {
         padding: '8px',
         textDecoration: 'none',
@@ -94,6 +143,7 @@ export const profileImage = mergeStyles({
     width: '200px',
     display: 'flex',
     margin: 'auto',
+    padding: '40px 0px'
 })
 export const bio = mergeStyles({
     width: '500px',
@@ -167,6 +217,36 @@ export const whaleProject = mergeStyles([projectBubble,{
 
 
 
+//Resume styling
+export const skillsHeader = mergeStyles([name, {
+    
+}])
+export const experienceHeader = mergeStyles([name, {
+    paddingTop: '40px',
+    paddingBottom: '40px',
+}])
+export const jobContainer = mergeStyles({
+    width: '100%',
+    marginBottom: '2rem',
+    marginRight: '20px',
+    padding: '10px 10px',
+    backgroundColor: 'rgba(0,0,0,0.3)', 
+    fontFamily: 'Josefin Sans, sans-serif',
+
+})
+export const jobHeader = mergeStyles({
+    fontSize: '25px',
+    fontWeight: '700',
+    paddingBottom: '20px',
+    fontFamily: 'fieldwork, sans-serif',
+})
+
+export const jobDate = mergeStyles({
+    fontSize: '12px'
+})
+export const jobDescription = mergeStyles({
+    paddingTop: '15px'
+})
 
 
 
@@ -184,5 +264,8 @@ export const footer = mergeStyles({
     boxShadow: '0px 1px 10px #999',
 })
 export const footerEmail = mergeStyles({
+    margin: '16px 0'
+})
+export const footerLocation = mergeStyles({
     margin: '16px 0'
 })

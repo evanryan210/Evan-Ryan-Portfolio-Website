@@ -33,8 +33,7 @@ export const MainSection = (props: any) =>{
                  a splendid day.</p>
             </div>
             {props.children}
-            <Projects />
-            <About />
+
         </div>
     )
 }
