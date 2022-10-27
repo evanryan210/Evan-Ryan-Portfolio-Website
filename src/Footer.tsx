@@ -1,15 +1,20 @@
 import { mergeStyles } from '@fluentui/merge-styles';
 import React from 'react';
 import * as styles from './styles';
-import { faLinkedin, faSquareFacebook, faSquareGithub, faSquareTwitter } from '@fortawesome/free-brands-svg-icons';
-
+import { faLinkedin, faSquareFacebook, faSquareGithub } from '@fortawesome/free-brands-svg-icons';
+import { faInbox } from '@fortawesome/free-solid-svg-icons'
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
-export const Footer = () =>{
-    return(
-        <footer className = {styles.footer}>
-            <a className={styles.footerEmail}>Evan Ryan | evanryan99@gmail.com | (603)801-9143</a>
+export const Footer = () => {
+    const [copied, setCopied] = React.useState(false);
+    const onCopy = React.useCallback(() => {
+        setCopied(true);
+    }, [])
+    return (
+        <footer className={styles.footer}>
+            <p className={styles.footerEmail}><span>Evan Ryan</span> | <span>evanryan99@gmail.com</span> | <span>(603)801-9143</span></p>
             <div className={styles.socialButtons}>
                 <a href='https://github.com/evanryan210'>
                     <FontAwesomeIcon icon={faSquareGithub} size='2x' />
@@ -17,9 +22,15 @@ export const Footer = () =>{
                 <a href='https://linkedin.com/in/evan-ryan-b9130184'>
                     <FontAwesomeIcon icon={faLinkedin} size='2x' />
                 </a>
-                <a href='https://www.facebook.com/evan.ryan.505523/'>
-                    <FontAwesomeIcon icon={faSquareFacebook} size='2x' />
-                </a>
+
+                <CopyToClipboard onCopy={onCopy} text={'evanryan99@gmail.com'}>
+                    <a onClick={()=>{
+                        alert('Email copied to clipboard!')
+                    }}className='tooltip'>
+                        <FontAwesomeIcon icon={faInbox} size='2x' />
+                    </a>
+                </CopyToClipboard>
+
             </div>
             <p className={styles.footerLocation}>Based In Washington, DC</p>
         </footer>

@@ -1,0 +1,61 @@
+.dnbtn {
+    border: 2px solid #0ff;
+    border-radius: 50px;
+    position: absolute;
+    color: #0ff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px 0 0 0;
+    width: 50px;
+    height: 25px;
+    text-decoration: none;
+    transition: .3s;
+  }
+  
+  .dnbtn:before {
+    font-family: 'ionicons';
+    content: '\f2dd';
+    font-size: 26px;
+    color: #0ff;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: .3s;
+  }
+  
+  .dnbtn:hover:before {
+    display: none;
+  }
+  
+  .dnbtn:hover:after {
+    font-family: Prompt;
+    content: 'DOWNLOAD';
+    color: #0ff;
+    font-size: 18px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: .3s;
+    animation: fadein .3s;
+  }
+  
+  .dnbtn:hover {
+    width: 160px;
+  }
+  
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeout {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }

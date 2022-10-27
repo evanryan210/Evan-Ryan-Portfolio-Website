@@ -9,7 +9,7 @@ import { Stylesheet } from '@fluentui/merge-styles';
 import { Footer } from './Footer';
 import { Projects } from './Projects';
 import { Resume } from './Resume'
-import { fas } from '@fortawesome/free-solid-svg-icons'
+import { fas, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faSquareTwitter, faSquareFacebook, faLinkedin, faSquareGithub } from '@fortawesome/free-brands-svg-icons'
 import { About } from './About';
