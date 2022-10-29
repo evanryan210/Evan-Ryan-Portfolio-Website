@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import * as styles from './styles';
 import { Link } from "react-router-dom";
 import { ContactForm } from './ContactForm';
+import { useWindowSize } from './useWindowSize';
 
 export const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [pos, setPos] = useState('top')
+
 
     useEffect (()=>{
         document.addEventListener("scroll", e => {
@@ -22,8 +24,8 @@ export const NavBar = () => {
         setIsOpen(!isOpen);
         console.log(isOpen + '  app')
     }
-
-
+    const windowSize = useWindowSize();
+    console.log(windowSize.deviceSize)
     return (
         <header className={styles.header}>
             <div className={styles.navBarContainer}>

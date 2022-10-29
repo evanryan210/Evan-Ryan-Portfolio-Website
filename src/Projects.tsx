@@ -23,7 +23,8 @@ export const Projects = () => {
   return (
     <div className={styles.mainSectionContainer}>
       <div className={styles.projectIntroContainer}>
-        <i>A collection of my past projects and experiences both CS and Engineering related.</i>
+        <p className={styles.skillsHeader}>Projects</p>
+        <i>A collection of my past projects and experiences both <b>software</b> and <b>engineering</b> related.</i>
       </div>
 
       {/* Web projects section */}

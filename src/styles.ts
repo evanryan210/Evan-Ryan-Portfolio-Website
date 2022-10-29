@@ -104,10 +104,10 @@ export const mainSectionContainer = mergeStyles({
 })
 export const projectIntroContainer = mergeStyles({
     display: 'flex',
+    flexDirection: 'column',
     textAlign: 'center',
     margin: 'auto',
     marginBottom: '100px',
-    marginTop: '50px',
     color: 'rgb(225, 255, 238)',
     justifyContent: 'center',
 })
@@ -120,7 +120,7 @@ export const name = mergeStyles({
     display: 'flex',
     justifyContent: 'center',
     fontFamily: 'Josefin Sans, sans-serif',
-    fontSize: '500%',
+    fontSize: '9vw',
     fontWeight: 'bold',
     letterSpacing: '15px',
     marginTop: '0px',
@@ -159,7 +159,7 @@ export const jobTitle = mergeStyles({
 })
 export const profileImage = mergeStyles({
     borderRadius: '50%',
-    width: '60%',
+    width: '40%',
     display: 'flex',
     margin: 'auto',
     border: '5px solid rgb(225, 255, 238)',

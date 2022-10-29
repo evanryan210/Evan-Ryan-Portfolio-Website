@@ -57,7 +57,7 @@ export const ContactForm = (props: any) => {
                 <form>
                     <div className={styles.contactFormContainer}>
                         <div className={styles.nameInputContainer}>
-                            <input required name="firstName" type="text" className="feedback-input" placeholder="First Name" value={firstName} onInput={(ev) => {
+                            <input id='firstName' required name="firstName" type="text" className="feedback-input" placeholder="First Name" value={firstName} onInput={(ev) => {
                                 setFirstName(ev.currentTarget.value)
                             }} />
                             <input required name="lastName" type="text" className="feedback-input" placeholder="Last Name" value={lastName} onInput={(ev) => {
