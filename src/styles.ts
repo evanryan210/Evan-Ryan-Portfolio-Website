@@ -7,6 +7,7 @@ import generator from './images/generator.png'
 import greenhouse from './images/greenhouse.png'
 import magnet from './images/magnet.png'
 import whale from './images/whale.png'
+import bookmark from './images/bookmark.png'
 import './fonts.css'
 import { faColumns } from '@fortawesome/free-solid-svg-icons';
 const seafoam = '#87b6a7'
@@ -102,6 +103,8 @@ export const mainSectionContainer = mergeStyles({
     boxShadow: 'rgba(0, 0, 0, 0.9) 1px 15px 15px',
     padding: '2rem',
 })
+
+
 export const projectIntroContainer = mergeStyles({
     display: 'flex',
     flexDirection: 'column',
@@ -159,7 +162,7 @@ export const jobTitle = mergeStyles({
 })
 export const profileImage = mergeStyles({
     borderRadius: '50%',
-    width: '40%',
+    width: '30%',
     display: 'flex',
     margin: 'auto',
     border: '5px solid rgb(225, 255, 238)',
@@ -171,7 +174,7 @@ export const bio = mergeStyles({
     maxWidth: '500px',
     display: 'flex',
     textAlign: 'justify',
-    margin: 'auto',
+    margin: 'auto'
 })
 export const sectionTitle = mergeStyles({
     textAlign: 'center',
@@ -208,7 +211,7 @@ export const projectList = mergeStyles({
     },
     //on mouse enter project bubble
     'a:hover':{
-        'span':{
+        '>span':{
             opacity: '0',
             transition: 'opacity .5s'
             
@@ -240,7 +243,9 @@ export const projectBubble = mergeStyles({
     justifyContent: 'center',
     fontWeight: '1000',
 })
-
+export const bookmarkProject = mergeStyles([projectBubble,{
+    backgroundImage: `url(${bookmark})`,
+}])
 export const sharpProject = mergeStyles([projectBubble,{
     backgroundImage: 'url(https://camo.githubusercontent.com/28dc976bb1d28cf99d4650d672c7a60afbcc7c593f77af92d43535462c5364ba/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f6c6f76656c6c2f7368617270406d61696e2f646f63732f696d6167652f73686172702d6c6f676f2e737667)',
 }])
@@ -253,36 +258,71 @@ export const generatorProject = mergeStyles([projectBubble,{
 }])
 export const greenhouseProject = mergeStyles([projectBubble,{
     backgroundImage: `url(${greenhouse})`,
+    cursor: 'default',
 }])
 export const magnetProject = mergeStyles([projectBubble,{
     backgroundImage: `url(${magnet})`,
+    cursor: 'default',
 }])
 export const whaleProject = mergeStyles([projectBubble,{
     backgroundImage: `url(${whale})`,
 }])
-
-
-
+export const sparkProject = mergeStyles([projectBubble], {
+    position: 'relative'
+})
+export const cssBubble = mergeStyles([projectBubble], {
+    position: 'relative',
+    backgroundImage: 'url("css_logo.png")',
+    backgroundSize: '75px',
+    backgroundRepeat: 'no-repeat'
+})
+export const htmlBubble = mergeStyles([projectBubble], {
+    position: 'relative',
+    backgroundImage: 'url("html_logo.png")',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '110px'
+})
+export const jsBubble = mergeStyles([projectBubble], {
+    position: 'relative',
+    backgroundImage: 'url("js_logo.png")',
+    backgroundSize: '180px',
+    backgroundRepeat: 'no-repeat'
+})
+export const hexaProject = mergeStyles([projectBubble], {
+    position: 'relative',
+    backgroundImage: 'url("https://www.w3schools.com/colors/img_colormap.gif")',
+    backgroundSize: '180px',
+    backgroundRepeat: 'no-repeat'
+})
 
 
 //Resume styling
 export const skillsHeader = mergeStyles([name, {
     margin: '30px 0'
 }])
+export const experienceContainer = mergeStyles({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+
+})
 export const experienceHeader = mergeStyles([name, {
     margin: '80px 0',
+    '@media(max-width: 500px)': {
+        fontSize: '20px',
+        letterSpacing: '2px'
+      },
     
 }])
 export const jobContainer = mergeStyles({
-    width: '100%',
+    width: '75%',
     marginBottom: '2rem',
     marginRight: '20px',
     padding: '10px 10px',
     backgroundColor: 'rgba(0,0,0,0.3)', 
     fontFamily: 'Josefin Sans, sans-serif',
     borderRadius: '8px',
-    color: 'white'
-
+    color: 'white',
 })
 export const jobHeader = mergeStyles({
     fontSize: '25px',
@@ -293,6 +333,9 @@ export const jobHeader = mergeStyles({
 
 export const jobDate = mergeStyles({
     fontSize: '12px'
+})
+export const listContainer = mergeStyles({
+    lineHeight: '2'
 })
 export const jobDescription = mergeStyles({
     paddingTop: '15px',
@@ -374,7 +417,8 @@ export const contactFormContainer = mergeStyles({
     },
 })
 export const buttonContainer = mergeStyles({
-    display: 'flex'
+    display: 'flex',
+    flexDirection: 'row'
 })
 export const nameInputContainer = mergeStyles({
     display: 'flex',

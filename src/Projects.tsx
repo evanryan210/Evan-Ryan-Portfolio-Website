@@ -1,11 +1,12 @@
 import { mergeStyles } from '@fluentui/merge-styles';
-import React from 'react';
+import React, {useRef} from 'react';
 import * as styles from './styles';
 import placeholder from './placeholder-image.png'
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
+import {Spark} from 'spark_app_v2'
 
 const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -19,19 +20,36 @@ const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
   },
 }));
 
-export const Projects = () => {
+export const Projects = (props: any ) => {
+
+  const parentRef = useRef<HTMLAnchorElement>(null);
+
   return (
     <div className={styles.mainSectionContainer}>
       <div className={styles.projectIntroContainer}>
+        <div id='projects' style={{height:'60px'}}></div>
         <p className={styles.skillsHeader}>Projects</p>
         <i>A collection of my past projects and experiences both <b>software</b> and <b>engineering</b> related.</i>
       </div>
 
       {/* Web projects section */}
       <div className={styles.sectionTitleContainer}>
-        <h1 id='projects' className={styles.sectionTitle}>Web</h1>
+        <h1 className={styles.sectionTitle}>Web</h1>
       </div>
       <div className={styles.projectList}>
+      <HtmlTooltip
+          title={
+            <React.Fragment>
+              <Typography color="inherit">Bookmark App</Typography>
+              A web app created to help keep track of and consolidate all your favorite websites!
+            </React.Fragment>
+          }>
+
+          <a href='https://github.com/evanryan210/bookmark_app' className={styles.bookmarkProject}>
+            <span>Bookmark App</span>
+          </a>
+        </HtmlTooltip>
+
         <HtmlTooltip
           title={
             <React.Fragment>
@@ -55,7 +73,7 @@ export const Projects = () => {
             </React.Fragment>
           }
         >
-          <a href='http://ospark.com/' className={styles.osparkProject}>
+          <a href='https://github.com/OsparkSolutions/website-ospark' className={styles.osparkProject}>
             <span>Orange Spark Website</span>
           </a>
         </HtmlTooltip>
@@ -69,22 +87,22 @@ export const Projects = () => {
             </React.Fragment>
           }
         >
-          <a className={styles.projectBubble}>
-            <span>Pulsing Sphere App</span>
+          <a href='https://github.com/evanryan210/spark_app_v2' ref={parentRef} className={styles.sparkProject}>
+            <span style={{zIndex: '99'}}>Pulsing Sphere App</span>
+            <Spark parentElementRef={parentRef} height={500} width={500} pulseRate={30} scale={1000} />
           </a>
         </HtmlTooltip>
 
         <HtmlTooltip
           title={
             <React.Fragment>
-              <Typography color="inherit">Tooltip with HTML</Typography>
-              <em>{"And here's"}</em> <b>{'some'}</b> <u>{'amazing content'}</u>.{' '}
-              {"It's very engaging. Right?"}
+              <Typography color="inherit">Hexadecimal Practice Tool</Typography>
+              This app is a practice tool that test your ability to guess the hexademical value to its corresponding color.
             </React.Fragment>
           }
         >
-          <a className={styles.projectBubble}>
-            <span>Project 4</span>
+          <a  href='https://github.com/evanryan210/hex-color-practice-tool' className={styles.hexaProject}>
+            <span style={{zIndex: '99'}}>Hexadecimal Practice Tool</span>
           </a>
         </HtmlTooltip>
 
@@ -150,12 +168,12 @@ export const Projects = () => {
             </React.Fragment>
           }
         >
-          <a className={styles.whaleProject}>
+          <a href='https://www.capecodtimes.com/story/news/2021/05/31/moby-nantucket-trash-whale-reminder-ocean-littering-dangers-sculpture-steel-wpi-dpw-surfside-beach/7457150002/' className={styles.whaleProject}>
             <span>Anti-litter Campaign: Whale Sculpture</span>
           </a>
         </HtmlTooltip>
-
       </div>
     </div>
   )
+
 }

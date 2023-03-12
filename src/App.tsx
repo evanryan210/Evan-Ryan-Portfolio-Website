@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import { NavBar } from './NavBar';
 import * as styles from './styles'
 import { MainSection } from './MainSection';
@@ -20,16 +20,12 @@ library.add(fas, faSquareTwitter, faSquareFacebook, faLinkedin, faSquareGithub)
 function App() {
   return (
     <div className={styles.App}>
-    
-      <NavBar />
-        <Routes>
-          <Route path='resume' element={<Resume />}></Route>
-          <Route path='/' element = {<MainSection />}></Route>
-          <Route path='projects' element={<Projects />}/>
-          <Route path='about' element={<About />} />
-        </Routes>
+
+      <NavBar />{/* ContactForm is in NavBar */}
+      <MainSection id='#' />
+      <Resume id='resume'/>
+      <Projects id='projects'/>
       <Footer />
-      
     </div>
   );
 }

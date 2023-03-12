@@ -47,27 +47,33 @@ export const ContactForm = (props: any) => {
             alert('Please enter a valid email.')
         }
     }
-
+    
     return (
-        <div className={styles.popupBox}>
-            <div className={styles.box}>
+        <div className={styles.popupBox} onClick={(ev: any) => {
+            if (ev.currentTarget === ev.target) {
+                props.handleClose()
+            }
+            
+        }}>
+            <div className={styles.box} id='popUpBox'>
                 <span className={styles.closeIcon} onClick={props.handleClose}>x</span>
 
                 <h1 className={styles.contactFormTitle}>I'd love to hear from you!</h1>
                 <form>
                     <div className={styles.contactFormContainer}>
-                        <div className={styles.nameInputContainer}>
+                        <div className={styles.nameInputContainer}>                            
                             <input id='firstName' required name="firstName" type="text" className="feedback-input" placeholder="First Name" value={firstName} onInput={(ev) => {
                                 setFirstName(ev.currentTarget.value)
-                            }} />
+                            }} />                            
                             <input required name="lastName" type="text" className="feedback-input" placeholder="Last Name" value={lastName} onInput={(ev) => {
                                 setLastName(ev.currentTarget.value)
                             }} />
                         </div>
-                        <input required name="email" type="text" className="feedback-input" placeholder="Email" value={email} onInput={(ev) => {
+                         <label htmlFor='email' style={{marginLeft: '20px'}}>{email && !validEmail ? '*please enter valid email' : <>&nbsp;</>}</label>
+                        <input required id='email' name="email" type="text" className="feedback-input" placeholder="Email" value={email} onInput={(ev) => {
                             setEmail(ev.currentTarget.value)
                         }} />
-                        <textarea name="text" className="feedback-input" placeholder="Comment" value={comment} onInput={(ev) => {
+                        <textarea id='comment' name="text" className="feedback-input" placeholder="Comment" value={comment} onInput={(ev) => {
                             setComment(ev.currentTarget.value)
                         }}></textarea>
                         <div className={styles.buttonContainer}>

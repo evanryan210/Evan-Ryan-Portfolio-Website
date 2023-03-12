@@ -9,7 +9,6 @@ import copy from "copy-to-clipboard";
 import { faInbox } from '@fortawesome/free-solid-svg-icons'
 import { Button, ClickAwayListener, Tooltip } from '@mui/material';
 
-
 export const MainSection = (props: any) =>{
     const [copied, setCopied] = React.useState(false);
     const [copyText, setCopyText] = useState('evanryan99@gmail.com');
@@ -67,7 +66,7 @@ export const MainSection = (props: any) =>{
 
 
             </div>
-
+            
             <p className={styles.jobTitle}>Web App Developer</p>
             <img className = {styles.profileImage} src = './evan_profile_pic.jpg' />
             <div className = {styles.bio}>
