@@ -15,7 +15,8 @@ const mnBlue = '#3a506b'
 
 export const App = mergeStyles({
     backgroundColor: '#bbc6e3',
-    color: 'white'
+    color: 'white',
+    fontFamily: 'Roboto'
 })
 export const header = mergeStyles({
     position: "sticky",
@@ -36,7 +37,7 @@ export const navBarContainer = mergeStyles({
 })
 
 export const navBarButton = mergeStyles({
-    fontFamily: 'fieldwork',
+    fontFamily: 'Roboto',
     width: '100px',
     color: '#E1FFEE',
     display: 'flex',
@@ -104,7 +105,6 @@ export const mainSectionContainer = mergeStyles({
     padding: '2rem',
 })
 
-
 export const projectIntroContainer = mergeStyles({
     display: 'flex',
     flexDirection: 'column',
@@ -116,17 +116,18 @@ export const projectIntroContainer = mergeStyles({
 })
 export const mainSectionText = mergeStyles({
     margin: '0px 10px 0px 10px',
-    lineHeight: '1.6'
+    lineHeight: '1.6',
+    fontFamily: 'Roboto'
 })
 
 export const name = mergeStyles({
     display: 'flex',
     justifyContent: 'center',
-    fontFamily: 'Josefin Sans, sans-serif',
-    fontSize: '9vw',
+    fontFamily: 'Roboto',
+    fontSize: '5vw',
     fontWeight: 'bold',
     letterSpacing: '15px',
-    marginTop: '0px',
+    marginTop: '30px',
     // paddingTop: '40px',
     // paddingBottom: '40px',
     marginBottom: '0px',
@@ -174,7 +175,8 @@ export const bio = mergeStyles({
     maxWidth: '500px',
     display: 'flex',
     textAlign: 'justify',
-    margin: 'auto'
+    margin: 'auto',
+    marginBottom: '100px'
 })
 export const sectionTitle = mergeStyles({
     textAlign: 'center',
@@ -243,6 +245,11 @@ export const projectBubble = mergeStyles({
     justifyContent: 'center',
     fontWeight: '1000',
 })
+export const  tooltipTitle = mergeStyles({
+    fontSize: '50px',
+})
+
+
 export const bookmarkProject = mergeStyles([projectBubble,{
     backgroundImage: `url(${bookmark})`,
 }])
@@ -298,12 +305,16 @@ export const hexaProject = mergeStyles([projectBubble], {
 
 //Resume styling
 export const skillsHeader = mergeStyles([name, {
-    margin: '30px 0'
+    margin: '30px 0',
+    fontFamily: 'Roboto'
 }])
 export const experienceContainer = mergeStyles({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    '& li': {
+        fontFamily: 'Roboto'
+    }
 
 })
 export const experienceHeader = mergeStyles([name, {
@@ -320,7 +331,7 @@ export const jobContainer = mergeStyles({
     marginRight: '20px',
     padding: '10px 10px',
     backgroundColor: 'rgba(0,0,0,0.3)', 
-    fontFamily: 'Josefin Sans, sans-serif',
+    fontFamily: 'Roboto',
     borderRadius: '8px',
     color: 'white',
 })
@@ -328,21 +339,24 @@ export const jobHeader = mergeStyles({
     fontSize: '25px',
     fontWeight: '700',
     paddingBottom: '20px',
-    fontFamily: 'fieldwork, sans-serif',
+    fontFamily: 'Roboto',
 })
 
 export const jobDate = mergeStyles({
-    fontSize: '12px'
+    fontSize: '12px',
+    fontFamily: 'Roboto',
 })
 export const listContainer = mergeStyles({
-    lineHeight: '2'
+    lineHeight: '2',
+    fontFamily: 'Roboto',
 })
 export const jobDescription = mergeStyles({
     paddingTop: '15px',
-    marginLeft: '15px'
+    marginLeft: '15px',
+    fontFamily: 'Roboto',
 })
 export const downloadResumeText = mergeStyles({
-    fontFamily: 'fieldwork, sans-serif',
+    fontFamily: 'Roboto',
     textAlign: 'center',
     margin: '30px 0'
 })
@@ -373,7 +387,7 @@ export const contactFormTitle = mergeStyles({
     color: 'black',
     textAlign: 'center',
     padding: '30px',
-    fontFamily: 'fieldwork',
+    fontFamily: 'Roboto',
 })
 export const contactFormContainer = mergeStyles({
     display: 'flex',
@@ -431,7 +445,7 @@ export const nameInputContainer = mergeStyles({
     },
     '@media(min-width: 828px)': {
         'input': {
-            width: '50%',
+            width: '100%',
         }
     },
 })
@@ -454,14 +468,14 @@ export const footerEmail = mergeStyles({
     margin: '16px 0',
     'span':{
         padding: '20px',
-        fontFamily: 'fieldwork, sans-serif',
+        fontFamily: 'Roboto',
         color: 'rgb(225, 255, 238)'
     },
     marginTop: '30px'
 })
 export const footerLocation = mergeStyles({
     margin: '16px 0',
-    fontFamily: 'fieldwork, sans-serif',
+    fontFamily: 'Roboto',
     color: 'rgb(225, 255, 238)',
 })
 

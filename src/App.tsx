@@ -20,7 +20,6 @@ library.add(fas, faSquareTwitter, faSquareFacebook, faLinkedin, faSquareGithub)
 function App() {
   return (
     <div className={styles.App}>
-
       <NavBar />{/* ContactForm is in NavBar */}
       <MainSection id='#' />
       <Resume id='resume'/>

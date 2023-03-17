@@ -36,6 +36,8 @@ export const MainSection = (props: any) =>{
         <div className={styles.mainSectionContainer}>
             <script src="https://kit.fontawesome.com/87afca363f.js" crossOrigin="anonymous"></script>
             <p className = {styles.name}>Evan Ryan</p>
+            <p className={styles.jobTitle}>Web App Developer</p>
+
             <div className={styles.socialButtons}>
                 <a href='https://github.com/evanryan210'>
                     <FontAwesomeIcon icon={faSquareGithub} size='2x' />
@@ -67,7 +69,6 @@ export const MainSection = (props: any) =>{
 
             </div>
             
-            <p className={styles.jobTitle}>Web App Developer</p>
             <img className = {styles.profileImage} src = './evan_profile_pic.jpg' />
             <div className = {styles.bio}>
                 <p className={styles.mainSectionText}>Greetings! My name is Evan and I am a full-stack web developer. I can

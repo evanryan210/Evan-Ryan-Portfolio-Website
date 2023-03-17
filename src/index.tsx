@@ -2,14 +2,59 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import ErrorPage from "./ErrorPage";
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, createBrowserRouter } from "react-router-dom";
+import { BrowserRouter, createBrowserRouter, RouterProvider } from "react-router-dom";
+import Contact from "./ProjectPages/TestProjectPage";
+import * as styles from './styles'
+import { NavBar } from './NavBar';
+import { MainSection } from './MainSection';
+import { Resume } from './Resume';
+import { Projects } from './Projects';
+import { Footer } from './Footer';
+import { ContactForm } from './ContactForm';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />
-  }
+    element: (<div className={styles.App}>
+      <NavBar />{/* ContactForm is in NavBar */}
+      <MainSection id='#' />
+      {/* <Resume id='resume'/>
+      <Projects id='projects'/> */}
+      <Footer />
+    </div>),
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/projects",
+    element: (
+      <div>
+        <NavBar />
+        <Projects />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: '/resume',
+    element: (
+      <div className={styles.App}>
+        <NavBar />
+        <Resume />
+        <Footer />
+      </div>
+    ),
+  },
+ {
+  path: '/contactform',
+  element: (
+    <div className={styles.App}>
+    <NavBar />
+    <ContactForm />
+    </div>
+  )
+}
 ])
 
 const root = ReactDOM.createRoot(
@@ -17,9 +62,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+
+    {/* BrowserRouter not working with new React Router lol */}
+    {/* <BrowserRouter>
       <App />
-    </BrowserRouter>
+    </BrowserRouter> */}
+
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

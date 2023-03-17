@@ -44,7 +44,7 @@ export const Resume = (props: any) => {
                 <a href='https://www.codecademy.com/profiles/EvanRyan/certificates/705dcb15de0da4dd9d9fc4f3274b430e' className={styles.jsBubble}>                   </a>
             </div>
             <div className={styles.downloadContainer}>
-                <h1 className={styles.downloadResumeText}>Download full resume here: </h1><a className={styles.resumeDownloadButton} href="/EvanRyanResume.pdf" download><FontAwesomeIcon className={styles.downloadIcon} icon={faDownload} /></a>
+                <h1 className={styles.downloadResumeText}>Download full resume here: </h1><a className={styles.resumeDownloadButton} href="/Evan Ryan Resume v0.1.6.pdf" download><FontAwesomeIcon className={styles.downloadIcon} icon={faDownload} /></a>
             </div>
         </div>
     )

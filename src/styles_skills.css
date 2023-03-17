@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'fieldword', sans-serif;
+    
 }
 
 /* #root {
@@ -23,7 +24,7 @@
     margin: auto;
     padding: 10px 20px;
     border-radius: 7px;
-    margin-bottom: 200px;
+    margin-bottom: 200px;;
 }
 
 .title-text {
@@ -34,7 +35,7 @@
     border-radius: 50px;
     margin-top: 15px;
     margin-bottom: 30px;
-    font-family: 'fieldwork', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container .skill-box {

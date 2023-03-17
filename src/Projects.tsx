@@ -40,7 +40,7 @@ export const Projects = (props: any ) => {
       <HtmlTooltip
           title={
             <React.Fragment>
-              <Typography color="inherit">Bookmark App</Typography>
+              <Typography className={styles.tooltipTitle} color="inherit">Bookmark App</Typography>
               A web app created to help keep track of and consolidate all your favorite websites!
             </React.Fragment>
           }>

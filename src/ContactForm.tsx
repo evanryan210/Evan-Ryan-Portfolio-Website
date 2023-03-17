@@ -1,5 +1,6 @@
 import * as styles from './styles';
 import React, { MouseEventHandler, useState } from 'react';
+import { Link, MessageBar, MessageBarButton, MessageBarType, TextField } from '@fluentui/react';
 // import './form_styles.css';
 
 export const runAsync = (runnable: ()=> Promise<void>) =>{
@@ -12,6 +13,8 @@ export const ContactForm = (props: any) => {
     const [email, setEmail] = useState<string>('');
     const [comment, setComment] = useState<string>('');
     const [isSubmitted, setIsSubmitted] = useState(false)
+    const [error, setError] = useState<string>()
+    const [open, setOpen] = useState<boolean>(false)
 
     const clearForm: MouseEventHandler<HTMLButtonElement> = (ev) => {
         setFirstName('');
@@ -19,6 +22,7 @@ export const ContactForm = (props: any) => {
         setEmail('');
         setComment('');
         setIsSubmitted(false);
+        setOpen(false)
         ev.preventDefault();
     }
 
@@ -27,7 +31,6 @@ export const ContactForm = (props: any) => {
 
     const formSubmissionalert = (ev: any) => {
         if (validEmail) {
-            alert(`You should recieve an email to ${email}`)
             runAsync(async () => {
                 const requestURL = `/contactform?firstName=${firstName}&lastName=${lastName}email=${email}&comment=${comment}`
                 console.log(requestURL)
@@ -37,9 +40,11 @@ export const ContactForm = (props: any) => {
                     console.log('is ok')
                     const responseText = await response.text()
                     console.log(JSON.parse(responseText));
+                    
                 }
             })
             ev.preventDefault();
+            setOpen(true)
         }
         else {
             setIsSubmitted(false);
@@ -47,7 +52,18 @@ export const ContactForm = (props: any) => {
             alert('Please enter a valid email.')
         }
     }
-    
+    const SuccessExample = () => (
+        <MessageBar
+            dismissButtonAriaLabel="Close"
+            messageBarType={MessageBarType.success}
+            isMultiline={false}
+            onDismiss={() => setOpen(false)}
+        >
+            Email sent successfully.
+        </MessageBar>
+        
+      )
+      
     return (
         <div className={styles.popupBox} onClick={(ev: any) => {
             if (ev.currentTarget === ev.target) {
@@ -56,26 +72,34 @@ export const ContactForm = (props: any) => {
             
         }}>
             <div className={styles.box} id='popUpBox'>
+                {open && <SuccessExample />}
                 <span className={styles.closeIcon} onClick={props.handleClose}>x</span>
 
                 <h1 className={styles.contactFormTitle}>I'd love to hear from you!</h1>
                 <form>
                     <div className={styles.contactFormContainer}>
-                        <div className={styles.nameInputContainer}>                            
-                            <input id='firstName' required name="firstName" type="text" className="feedback-input" placeholder="First Name" value={firstName} onInput={(ev) => {
+                        <div className={styles.nameInputContainer}>
+                            <TextField required label="First" onChange={(ev) => {
                                 setFirstName(ev.currentTarget.value)
-                            }} />                            
-                            <input required name="lastName" type="text" className="feedback-input" placeholder="Last Name" value={lastName} onInput={(ev) => {
+                            }} />
+                            <TextField required label="Last" onChange={(ev) => {
                                 setLastName(ev.currentTarget.value)
                             }} />
                         </div>
-                         <label htmlFor='email' style={{marginLeft: '20px'}}>{email && !validEmail ? '*please enter valid email' : <>&nbsp;</>}</label>
-                        <input required id='email' name="email" type="text" className="feedback-input" placeholder="Email" value={email} onInput={(ev) => {
+
+                        {/* Old method for invalid email warning */}
+                        {/* <label htmlFor='email' style={{ marginLeft: '20px', color: 'red' }}>{email && !validEmail ? '*Please enter valid email' : <>&nbsp;</>}</label> */}
+
+                        <TextField required label="Email" value={email} onGetErrorMessage={(value)=>{
+                            if(value === 'error'){
+                                return "you typed error"
+                            }
+                            
+                        }} onChange={(ev) => {
                             setEmail(ev.currentTarget.value)
                         }} />
-                        <textarea id='comment' name="text" className="feedback-input" placeholder="Comment" value={comment} onInput={(ev) => {
-                            setComment(ev.currentTarget.value)
-                        }}></textarea>
+                        <TextField label="Comment" multiline rows={3} />
+
                         <div className={styles.buttonContainer}>
                             <button className='submitButton' type='reset' onClick={clearForm}><p>Clear</p></button>
                             <button className='submitButton' type="submit" onClick={formSubmissionalert}><p>Submit</p></button>

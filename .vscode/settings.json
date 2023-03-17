@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/5a2f6de2-bd62-4e49-a7eb-1108eef2a131/resourceGroups/EvanRyanPortfolioWebsite_group/providers/Microsoft.Web/sites/EvanRyanPortfolioWebsite",
+    "appService.deploySubpath": "build"
+}
