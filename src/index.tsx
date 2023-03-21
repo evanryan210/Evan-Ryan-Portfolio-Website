@@ -35,6 +35,7 @@ const router = createBrowserRouter([
         <Footer />
       </div>
     ),
+    errorElement: <ErrorPage />,
   },
   {
     path: '/resume',
@@ -45,6 +46,7 @@ const router = createBrowserRouter([
         <Footer />
       </div>
     ),
+    errorElement: <ErrorPage />,
   },
  {
   path: '/contactform',
@@ -53,7 +55,8 @@ const router = createBrowserRouter([
     <NavBar />
     <ContactForm />
     </div>
-  )
+  ),
+  errorElement: <ErrorPage />,
 }
 ])
 
