@@ -30,10 +30,9 @@ export const NavBar = () => {
     return (
         <header className={styles.header}>
             <div className={styles.navBarContainer}>
-                <a href="/" className={styles.navBarButton}>Home</a>
-                <a href='/projects'className={styles.navBarButton} >Projects</a>
-                {/* <Link to ="/about" className={styles.navBarButton}>About</Link> */}
-                <a href ='/resume' className={styles.navBarButton}>Resume</a>
+                <Link to={"/"} className={styles.navBarButton}>Home</Link>
+                <Link to={'/projects'}className={styles.navBarButton} >Projects</Link>
+                <Link to={'/resume'} className={styles.navBarButton}>Resume</Link>
                 <a onClick={togglePopup} className={styles.navBarButton}>Contact Me</a>
                 {/* <a className={styles.navBarButton} onClick={togglePopup}>Contact</a> */}
                 {isOpen && <ContactForm handleClose={togglePopup} />}

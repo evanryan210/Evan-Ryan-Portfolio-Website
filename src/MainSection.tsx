@@ -74,7 +74,7 @@ export const MainSection = (props: any) =>{
                 <p className={styles.mainSectionText}>Greetings! My name is Evan and I am a full-stack web developer. I can
                 create a website from nothing using only HTML, CSS, and Javascript and am experienced in developing web and 
                 desktop applications. When I am not programming, I dabble in graphic design and 2D animation which has given
-                me a good understanding for front end design.</p>
+                me a detailed understanding for front end design and UI.</p>
             </div>
             {props.children}
 

@@ -96,11 +96,13 @@ export const popupText = mergeStyles({
 
 
 export const mainSectionContainer = mergeStyles({
-    width: '75%',
+    //make width 75% for the skinny look
+    width: '100%',
     justifyItems: 'center',
     margin: 'auto',
     height: '100%',
-    backgroundColor: mnBlue,
+    backgroundImage: 'linear-gradient(to top, #30cfd0 0%, #330867 100%)',
+    // backgroundColor: mnBlue,
     boxShadow: 'rgba(0, 0, 0, 0.9) 1px 15px 15px',
     padding: '2rem',
 })
@@ -111,7 +113,7 @@ export const projectIntroContainer = mergeStyles({
     textAlign: 'center',
     margin: 'auto',
     marginBottom: '100px',
-    color: 'rgb(225, 255, 238)',
+    color: 'white',
     justifyContent: 'center',
 })
 export const mainSectionText = mergeStyles({
@@ -131,7 +133,7 @@ export const name = mergeStyles({
     // paddingTop: '40px',
     // paddingBottom: '40px',
     marginBottom: '0px',
-    color: 'rgb(225, 255, 238)',
+    color: 'white',
     textAlign: 'center',
     '@media(max-width: 700px)':{
         fontSize: '200%',
@@ -159,14 +161,14 @@ export const jobTitle = mergeStyles({
     fontFamily: 'Josefin Sans, sans-serif',
     fontWeight: 'bold',
     fontSize: '150%',
-    color: 'rgb(225, 255, 238)'
+    color: 'white'
 })
 export const profileImage = mergeStyles({
     borderRadius: '50%',
     width: '30%',
     display: 'flex',
     margin: 'auto',
-    border: '5px solid rgb(225, 255, 238)',
+    border: '5px solid white',
     marginTop: '20px',
     marginBottom: '20px'
     
@@ -182,10 +184,10 @@ export const sectionTitle = mergeStyles({
     textAlign: 'center',
     fontFamily: 'Josefin Sans, sans-serif',
     padding: '50px',
-    color: 'rgb(225, 255, 238)'
+    color: 'white'
 })
 export const sectionTitleContainer = mergeStyles({
-    borderBottom: '5px solid rgb(225, 255, 238);',
+    borderBottom: 'white',
     width: '50%',
     display: 'flex',
     justifyContent: 'center',
@@ -374,12 +376,10 @@ export const resumeDownloadButton = mergeStyles({
 export const downloadIcon = mergeStyles({
     fontSize: '25px',
     '&:hover':{
-        color: 'rgb(225, 255, 238)',
+        color: 'white',
         fontSize: '30px'
     }
 })
-
-
 
 
 //Contact form
@@ -469,14 +469,15 @@ export const footerEmail = mergeStyles({
     'span':{
         padding: '20px',
         fontFamily: 'Roboto',
-        color: 'rgb(225, 255, 238)'
+        color: 'white'
     },
     marginTop: '30px'
 })
 export const footerLocation = mergeStyles({
     margin: '16px 0',
     fontFamily: 'Roboto',
-    color: 'rgb(225, 255, 238)',
+    color: 'white',
 })
+
 
 
