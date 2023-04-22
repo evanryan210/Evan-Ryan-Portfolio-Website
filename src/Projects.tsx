@@ -37,7 +37,25 @@ export const Projects = (props: any ) => {
         <h1 className={styles.sectionTitle}>Web</h1>
       </div>
       <div className={styles.projectList}>
-      <HtmlTooltip
+        <div className={styles.bubbleBox}>
+          <HtmlTooltip
+            title={
+              <React.Fragment>
+                <Typography className={styles.tooltipTitle} color="inherit">Finish That Tweet</Typography>
+                A little game to see how well you know the former President's twitter presence.
+              </React.Fragment>
+            }>
+
+            <a href='https://trump-tweets.vercel.app/' className={styles.trumpTweetProject}>
+              <span>Finish That Tweet</span>
+            </a>
+
+
+          </HtmlTooltip>
+        </div>
+      
+<div className={styles.bubbleBox}>
+<HtmlTooltip
           title={
             <React.Fragment>
               <Typography className={styles.tooltipTitle} color="inherit">Bookmark App</Typography>
@@ -49,8 +67,9 @@ export const Projects = (props: any ) => {
             <span>Bookmark App</span>
           </a>
         </HtmlTooltip>
-
-        <HtmlTooltip
+</div>
+        
+<div className={styles.bubbleBox}><HtmlTooltip
           title={
             <React.Fragment>
               <Typography color="inherit">Image Resizing App</Typography>
@@ -62,9 +81,10 @@ export const Projects = (props: any ) => {
           <a href='https://github.com/evanryan210/sharp-resize' className={styles.sharpProject}>
             <span>Image Resizing App</span>
           </a>
-        </HtmlTooltip>
+        </HtmlTooltip></div>
+        
 
-        <HtmlTooltip
+        <div className={styles.bubbleBox}><HtmlTooltip
           title={
             <React.Fragment>
               <Typography color="inherit">Orange Spark Website</Typography>
@@ -76,9 +96,9 @@ export const Projects = (props: any ) => {
           <a href='https://github.com/OsparkSolutions/website-ospark' className={styles.osparkProject}>
             <span>Orange Spark Website</span>
           </a>
-        </HtmlTooltip>
+        </HtmlTooltip></div>
 
-        <HtmlTooltip
+        <div className={styles.bubbleBox}><HtmlTooltip
           title={
             <React.Fragment>
               <Typography color="inherit">Pulsing Sphere App</Typography>
@@ -91,9 +111,9 @@ export const Projects = (props: any ) => {
             <span style={{zIndex: '99'}}>Pulsing Sphere App</span>
             <Spark parentElementRef={parentRef} height={500} width={500} pulseRate={30} scale={1000} />
           </a>
-        </HtmlTooltip>
+        </HtmlTooltip></div>
 
-        <HtmlTooltip
+        <div className={styles.bubbleBox}><HtmlTooltip
           title={
             <React.Fragment>
               <Typography color="inherit">Hexadecimal Practice Tool</Typography>
@@ -104,7 +124,7 @@ export const Projects = (props: any ) => {
           <a  href='https://github.com/evanryan210/hex-color-practice-tool' className={styles.hexaProject}>
             <span style={{zIndex: '99'}}>Hexadecimal Practice Tool</span>
           </a>
-        </HtmlTooltip>
+        </HtmlTooltip></div>
 
       </div>
 
@@ -113,7 +133,7 @@ export const Projects = (props: any ) => {
         <h1 className={styles.sectionTitle}>Engineering</h1>
       </div>
       <div className={styles.projectList}>
-        <HtmlTooltip
+        <div className={styles.bubbleBox}><HtmlTooltip
           title={
             <React.Fragment>
               <Typography color="inherit">Thermoelectric Generator</Typography>
@@ -126,9 +146,9 @@ export const Projects = (props: any ) => {
           <a className={styles.generatorProject} href='https://digital.wpi.edu/pdfviewer/pc289n253'>
             <span>Thermoelectric Generator</span>
           </a>
-        </HtmlTooltip>
+        </HtmlTooltip></div>
 
-        <HtmlTooltip
+        <div className={styles.bubbleBox}><HtmlTooltip
           title={
             <React.Fragment>
               <Typography color="inherit">Greenhouse Design</Typography>
@@ -140,9 +160,9 @@ export const Projects = (props: any ) => {
           <a className={styles.greenhouseProject}>
             <span>Greenhouse Design</span>
           </a>
-        </HtmlTooltip>
+        </HtmlTooltip></div>
 
-        <HtmlTooltip
+        <div className={styles.bubbleBox}><HtmlTooltip
           title={
             <React.Fragment>
               <Typography color="inherit">Electromagnetic Braking System</Typography>
@@ -156,9 +176,9 @@ export const Projects = (props: any ) => {
           <a className={styles.magnetProject}>
             <span>Electromagnetic Braking System</span>
           </a>
-        </HtmlTooltip>
+        </HtmlTooltip></div>
 
-        <HtmlTooltip
+        <div className={styles.bubbleBox}><HtmlTooltip
           title={
             <React.Fragment>
               <Typography color="inherit">Anti-litter Campaign: Whale Sculpture</Typography>
@@ -171,7 +191,7 @@ export const Projects = (props: any ) => {
           <a href='https://www.capecodtimes.com/story/news/2021/05/31/moby-nantucket-trash-whale-reminder-ocean-littering-dangers-sculpture-steel-wpi-dpw-surfside-beach/7457150002/' className={styles.whaleProject}>
             <span>Anti-litter Campaign: Whale Sculpture</span>
           </a>
-        </HtmlTooltip>
+        </HtmlTooltip></div>
       </div>
     </div>
   )

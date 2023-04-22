@@ -229,6 +229,13 @@ export const projectList = mergeStyles({
         }
     }
 })
+export const bubbleBox = mergeStyles({
+    width: '150px',
+    height: '150px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+})
 export const projectBubble = mergeStyles({
     backgroundSize: 'cover',
     backgroundColor: 'white',
@@ -242,16 +249,22 @@ export const projectBubble = mergeStyles({
     fontSize: '16px',
     margin: '40px 2px',
     alignItems: 'center',
-    height: '125px',
-    width: '125px',
+    height: '150px',
+    width: '150px',
     justifyContent: 'center',
     fontWeight: '1000',
+    ':hover': {
+       width: '140px',
+       height: '140px'
+    }
 })
 export const  tooltipTitle = mergeStyles({
     fontSize: '50px',
 })
 
-
+export const trumpTweetProject = mergeStyles([projectBubble, {
+    backgroundImage: `url(https://image.cnbcfm.com/api/v1/image/104269174-GettyImages-634146548.jpg?v=1665145897)`
+}])
 export const bookmarkProject = mergeStyles([projectBubble,{
     backgroundImage: `url(${bookmark})`,
 }])
@@ -267,17 +280,17 @@ export const generatorProject = mergeStyles([projectBubble,{
 }])
 export const greenhouseProject = mergeStyles([projectBubble,{
     backgroundImage: `url(${greenhouse})`,
-    cursor: 'default',
+    cursor: 'pointer'
 }])
 export const magnetProject = mergeStyles([projectBubble,{
     backgroundImage: `url(${magnet})`,
-    cursor: 'default',
+    cursor: 'pointer'
 }])
 export const whaleProject = mergeStyles([projectBubble,{
     backgroundImage: `url(${whale})`,
 }])
 export const sparkProject = mergeStyles([projectBubble], {
-    position: 'relative'
+    position: 'relative',
 })
 export const cssBubble = mergeStyles([projectBubble], {
     position: 'relative',
