@@ -121,7 +121,7 @@ export const Projects = (props: any ) => {
             </React.Fragment>
           }
         >
-          <a  href='https://github.com/evanryan210/hex-color-practice-tool' className={styles.hexaProject}>
+          <a  href='https://hex-color-practice-tool.vercel.app/' className={styles.hexaProject}>
             <span style={{zIndex: '99'}}>Hexadecimal Practice Tool</span>
           </a>
         </HtmlTooltip></div>
